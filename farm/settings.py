@@ -13,7 +13,6 @@ from pathlib import Path
 import os
 import environ
 
-
 env = environ.Env(
     # set casting, default value
     DEBUG=(bool, False)
@@ -54,6 +53,7 @@ INSTALLED_APPS = [
     'silk',
     # my apps
     'web_app',
+    'farm_app',
 ]
 
 MIDDLEWARE = [
