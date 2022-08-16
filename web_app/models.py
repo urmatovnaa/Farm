@@ -11,8 +11,8 @@ class ProductPhoto(models.Model):
 
 class Company(models.Model):
 	LANGUAGE_CHOICES = [
-		('ENGLISH', 'English'),
-		('RUSSIAN', 'Русский')
+		('english', 'English'),
+		('russian', 'Русский')
 	]
 	name = models.CharField(max_length=255)
 	logo = models.ImageField(upload_to='logo')
