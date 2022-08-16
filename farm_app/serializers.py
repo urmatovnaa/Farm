@@ -1,8 +1,8 @@
-from farm_app.models import Contacts
+from farm_app.models import Contact
 from rest_framework import serializers
 
 
-class ContactsSerializer(serializers.Serializer):
+class ContactSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Contacts
+        model = Contact
         fields = '__all__'
