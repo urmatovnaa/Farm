@@ -1,3 +1,4 @@
+from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.filters import SearchFilter
 from rest_framework.viewsets import ModelViewSet
 
@@ -6,12 +7,13 @@ from web_app.serializers import CompanySerializer, CompanyDetailSerializer
 
 
 class CompanyView(ModelViewSet):
-    queryset = Company.objects.all().order_by('-id')
+    queryset = Company.objects.all()
     serializer_class = CompanySerializer
     serializer_classes = {
         'retrieve': CompanyDetailSerializer,
     }
-    filter_backends = [SearchFilter]
+    filter_backends = [DjangoFilterBackend, SearchFilter]
+    filterset_fields = ['language']
     search_fields = ['name', 'products_name__name']
 
     def get_serializer_class(self):
