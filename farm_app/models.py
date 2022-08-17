@@ -12,3 +12,26 @@ class Contact(models.Model):
 
     def __str__(self):
         return f'{self.address}'
+
+
+class AboutUs(models.Model):
+    LANGUAGE_CHOICES = [
+        ('ENGLISH', 'English'),
+        ('RUSSIAN', 'Русский')
+    ]
+
+    language = models.CharField(max_length=100, choices=LANGUAGE_CHOICES)
+    name = models.CharField(max_length=50)
+    text = models.CharField(max_length=1000)
+
+
+class Main(models.Model):
+    LANGUAGE_CHOICES = [
+        ('ENGLISH', 'English'),
+        ('RUSSIAN', 'Русский')
+    ]
+
+    language = models.CharField(max_length=100, choices=LANGUAGE_CHOICES)
+    name = models.CharField(max_length=50)
+    text = models.CharField(max_length=1000)
+

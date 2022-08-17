@@ -29,7 +29,7 @@ urlpatterns = [
     path('silk/', include('silk.urls', namespace='silk')),
     # my urls
     path('company/', include('web_app.urls')),
-    path('contacts/', include('farm_app.urls'))
+    path('', include('farm_app.urls')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
