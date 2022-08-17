@@ -1,7 +1,9 @@
 from django.urls import path
-from farm_app.views import ContactViewSet
+from farm_app.views import ContactViewSet, AboutUsViewSet, MainViewSet
 
 
 urlpatterns = [
-    path('', ContactViewSet.as_view({'get': 'list'}), name='contact-list')
+    path('contacts/', ContactViewSet.as_view({'get': 'list'}), name='contact-list'),
+    path('aboutus/', AboutUsViewSet.as_view({'get': 'list'}), name='aboutus-list'),
+    path('', MainViewSet.as_view({'get': 'list'}), name='main-list')
 ]
