@@ -1,6 +1,4 @@
 from farm_app.models import Contact, AboutUs, Main
-from rest_framework import serializers
-
 
 class ContactSerializer(serializers.ModelSerializer):
     class Meta:
