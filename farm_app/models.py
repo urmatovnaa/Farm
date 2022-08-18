@@ -13,6 +13,7 @@ class Contact(models.Model):
     def __str__(self):
         return f'{self.address}'
 
+
 class AboutUs(models.Model):
     LANGUAGE_CHOICES = [
         ('english', 'English'),
