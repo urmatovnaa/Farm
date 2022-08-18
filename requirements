@@ -7,6 +7,7 @@ coreschema==0.0.4
 Django==4.0.6
 django-environ==0.9.0
 django-filter==22.1
+django-grappelli==3.0.3
 django-silk==5.0.1
 djangorestframework==3.13.1
 drf-yasg==1.21.3
@@ -19,6 +20,7 @@ Jinja2==3.1.2
 MarkupSafe==2.1.1
 packaging==21.3
 Pillow==9.2.0
+psycopg2-binary==2.9.3
 pycodestyle==2.9.0
 pyparsing==3.0.9
 python-dateutil==2.8.2
