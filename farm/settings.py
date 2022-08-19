@@ -33,10 +33,10 @@ environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 # SECRET_KEY = env('SECRET_KEY')
 SECRET_KEY = 'django-insecure-wiwyotq0@&$ic7x7i8*bv^co)wej93a+&tsx=bdzek7@jvpw(d'
 
-DEBAG = True
+DEBUG = True
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env('DEBUG')
+# DEBUG = env('DEBUG')
 
 ALLOWED_HOSTS = ['*']
 
@@ -151,6 +151,7 @@ MODELTRANSLATION_PREPOPULATE_LANGUAGE = 'ru'
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
