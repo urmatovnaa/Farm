@@ -1,1 +1,1 @@
-web: gunicorn Farm.kg.wsgi
+web: gunicorn farm.wsgi
