@@ -15,22 +15,17 @@ class Contact(models.Model):
 
 
 class AboutUs(models.Model):
-    LANGUAGE_CHOICES = [
-        ('english', 'English'),
-        ('russian', 'Русский')
-    ]
-
-    language = models.CharField(max_length=100, choices=LANGUAGE_CHOICES)
     name = models.CharField(max_length=50)
     text = models.CharField(max_length=1000)
+
+    class Meta:
+        verbose_name_plural = 'AboutUs'
 
 
 class Main(models.Model):
-    LANGUAGE_CHOICES = [
-        ('english', 'English'),
-        ('russian', 'Русский')
-    ]
-
-    language = models.CharField(max_length=100, choices=LANGUAGE_CHOICES)
     name = models.CharField(max_length=50)
     text = models.CharField(max_length=1000)
+
+    class Meta:
+        verbose_name_plural = 'Main'
+

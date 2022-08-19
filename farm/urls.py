@@ -2,6 +2,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include, re_path
+from django.conf.urls.i18n import i18n_patterns
 
 from rest_framework import permissions
 from drf_yasg.views import get_schema_view
@@ -27,9 +28,16 @@ urlpatterns = [
     re_path(r'^swagger/$', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     re_path(r'^redoc/$', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
     path('grappelli/', include('grappelli.urls')), # grappelli URLS
-    path('admin/', admin.site.urls),
-    path('', include('farm_app.urls')),
+    # path('admin/', admin.site.urls),
+    # path('', include('farm_app.urls')),
     path('silk/', include('silk.urls', namespace='silk')),
-    path('company/', include('web_app.urls')),
+    # path('company/', include('web_app.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
+urlpatterns += i18n_patterns(
+    path('i18n/', include('django.conf.urls.i18n')),
+    path('admin/', admin.site.urls),  # admin site
+    path('', include('farm_app.urls')),
+    path('company/', include('web_app.urls')),
+    prefix_default_language=False
+)

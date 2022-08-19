@@ -13,8 +13,7 @@ class CompanyView(ModelViewSet):
         'retrieve': CompanyDetailSerializer,
     }
     filter_backends = [DjangoFilterBackend, SearchFilter]
-    filterset_fields = ['language']
-    search_fields = ['name', 'products_name__name']
+    search_fields = ['name', 'key_words']
 
     def get_serializer_class(self):
         return self.serializer_classes.get(self.action, self.serializer_class)

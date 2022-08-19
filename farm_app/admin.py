@@ -1,6 +1,18 @@
 from django.contrib import admin
-from farm_app.models import Contact, AboutUs, Main
+from modeltranslation.admin import TranslationAdmin
+from farm_app.models import Main, AboutUs, Contact
 
-admin.site.register(Contact)
-admin.site.register(AboutUs)
-admin.site.register(Main)
+
+@admin.register(Contact)
+class PersonAdmin3(admin.ModelAdmin):
+    pass
+
+
+@admin.register(AboutUs)
+class Admin2(TranslationAdmin):
+    pass
+
+
+@admin.register(Main)
+class Admin4(TranslationAdmin):
+    pass

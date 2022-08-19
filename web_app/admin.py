@@ -1,12 +1,14 @@
 from django.contrib import admin
-
+from modeltranslation.admin import TranslationAdmin
 from web_app.models import ProductPhoto, Company
 
 
-class PersonAdmin3(admin.ModelAdmin):
+@admin.register(Company)
+class PersonAdmin3(TranslationAdmin):
     list_display = ('name', 'web_site')
 
 
-admin.site.register(ProductPhoto)
-admin.site.register(Company, PersonAdmin3)
+@admin.register(ProductPhoto)
+class Admin(admin.ModelAdmin):
+    pass
 
