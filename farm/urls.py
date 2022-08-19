@@ -27,16 +27,15 @@ urlpatterns = [
     re_path(r'^swagger(?P<format>\.json|\.yaml)$', schema_view.without_ui(cache_timeout=0), name='schema-json'),
     re_path(r'^swagger/$', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     re_path(r'^redoc/$', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
-    path('grappelli/', include('grappelli.urls')), # grappelli URLS
-    # path('admin/', admin.site.urls),
-    # path('', include('farm_app.urls')),
+    path('admin/', admin.site.urls),
+    path('', include('farm_app.urls')),
     path('silk/', include('silk.urls', namespace='silk')),
-    # path('company/', include('web_app.urls')),
+    path('company/', include('web_app.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 urlpatterns += i18n_patterns(
     path('i18n/', include('django.conf.urls.i18n')),
-    path('admin/', admin.site.urls),  # admin site
+    # path('admin/', admin.site.urls),  # admin site
     path('', include('farm_app.urls')),
     path('company/', include('web_app.urls')),
     prefix_default_language=False
